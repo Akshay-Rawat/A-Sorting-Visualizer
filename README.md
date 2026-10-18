@@ -1,4 +1,4 @@
-https://a-sorting-visualizer-nldp.onrender.com/
+
 Sorting Visualizer is a web-based project built with HTML, CSS, and JavaScript that helps users understand how different sorting algorithms work through real-time visual animations. The application generates a random array and allows users to visualize sorting step-by-step using separate controls for each algorithm.
 
 This project includes Bubble Sort, Selection Sort, Merge Sort, and Quick Sort, each implemented with asynchronous animations to clearly show comparisons and swaps. A clean and minimal UI ensures smooth interaction and easy understanding of algorithm behavior.

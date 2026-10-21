@@ -1,24 +1,85 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Sorting Visualizer</title>
   <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
 </head>
 <body>
+  <main class="app">
+    <header class="page-header">
+      <p class="eyebrow">ALGORITHM PLAYGROUND</p>
+      <h1>Sorting Visualizer</h1>
+      <p class="subtitle">Visualize how sorting algorithms work.</p>
+    </header>
 
-  <h1>Sorting Visualizer</h1>
+    <section class="controls" aria-label="Sorting controls">
+      <button id="generateBtn" class="primary-btn">↻ Generate Array</button>
+      <button data-sort="bubbleSort">Bubble Sort</button>
+      <button data-sort="selectionSort">Selection Sort</button>
+      <button data-sort="mergeSortWrapper">Merge Sort</button>
+      <button data-sort="quickSortWrapper">Quick Sort</button>
+    </section>
 
-  <div class="controls">
-    <button onclick="generateArray()">Generate Array</button>
-    <button onclick="bubbleSort()">Bubble Sort</button>
-    <button onclick="selectionSort()">Selection Sort</button>
-    <button onclick="mergeSortWrapper()">Merge Sort</button>
-    <button onclick="quickSortWrapper()">Quick Sort</button>
-  </div>
+    <section class="settings" aria-label="Visualizer settings">
+      <div class="setting">
+        <div class="label-row">
+          <label for="sizeSlider">Array Size</label>
+          <strong id="sizeValue">40</strong>
+        </div>
+        <input id="sizeSlider" type="range" min="10" max="100" value="40">
+        <p class="helper">Choose the number of bars</p>
+      </div>
 
-  <div id="array"></div>
+      <div class="setting">
+        <div class="label-row">
+          <label for="speedSlider">Animation Delay</label>
+          <strong><span id="speedValue">50</span> ms</strong>
+        </div>
+        <input id="speedSlider" type="range" min="1" max="200" value="50">
+        <p class="helper">Lower delay means faster animation</p>
+      </div>
 
-  <script src="script.js"></script>
+      <div class="stat">
+        <span>Comparisons</span>
+        <strong id="comparisons">0</strong>
+      </div>
+
+      <div class="stat">
+        <span>Swaps / Writes</span>
+        <strong id="swaps">0</strong>
+      </div>
+
+      <div class="stat">
+        <span>Status</span>
+        <strong id="status" class="status-pill">Ready</strong>
+      </div>
+    </section>
+
+    <section class="visualizer-panel">
+      <div class="chart-heading">
+        <div>
+          <h2>Array Visualization</h2>
+          <p id="chartDescription">Generate an array and choose an algorithm.</p>
+        </div>
+        <span class="chart-tag" id="algorithmName">Unsorted Array</span>
+      </div>
+
+      <div id="array" role="img" aria-label="Array bars to be sorted"></div>
+
+      <div class="legend">
+        <span><i class="dot unsorted"></i> Unsorted</span>
+        <span><i class="dot comparing"></i> Comparing</span>
+        <span><i class="dot sorted"></i> Sorted</span>
+      </div>
+    </section>
+
+    <footer>
+      Built with HTML, CSS and JavaScript
+    </footer>
+  </main>
 </body>
 </html>
